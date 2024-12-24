@@ -7,8 +7,10 @@
   width: 1140px;
   margin: 0 auto;
 }
+/* Navbar */
 .navbar {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 24px 0;
@@ -60,11 +62,6 @@
   color: rgba(255, 255, 255, 1);
   margin: 0 20px;
 }
-.header-cnt {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .header-content {
   display: flex;
   align-items: center !important;
@@ -93,8 +90,12 @@
 .header-content a:hover {
   background-color: black;
 }
+
+/* About oneder section */
 .section {
   padding: 80px 0;
+  display: flex;
+  flex-direction: column;
 }
 .section-header {
   display: flex;
@@ -153,6 +154,8 @@
 .section-one-content a:hover {
   background-color: black;
 }
+
+/* Our Team Section */
 .section-header p {
   font: 300 20px "Work Sans";
   color: #808080;
@@ -167,9 +170,41 @@
   gap: 40px;
   padding-bottom: 80px;
 }
+.section-two-card-img{
+  position: relative;
+  overflow: hidden;
+}
 .section-two-card-img img {
   max-width: 255px;
-  height: fit-content;
+  height: 100%;
+  transition: .4s;
+   
+  &:hover{
+    scale: 1.1;
+  }
+}
+.section-two-card-img .iconBar{
+  position: absolute;
+  top: 0;
+  left: -15%;
+  width: 15%;
+  scale:0;
+  height: 100%;
+  padding: 10px 0;
+  color: white;
+  background-color: #007bff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: .3s;
+  transform-origin: left;
+}
+.section-two-card-img:hover .iconBar{
+  scale:1.1;
+  width: 15%;
+  left: 0;
+  right: 10px;
 }
 .section-two-content {
   padding: 16px;
@@ -188,6 +223,8 @@ hr {
   color: #dee2e6;
   size: 1px;
 }
+
+/* Portfolio section */
 .section-header-links {
   display: flex;
   justify-content: center;
@@ -227,6 +264,8 @@ hr {
   max-width: 255px;
   height: fit-content;
 }
+
+/* Our Services Section */
 .section-services-bg-img {
   background-color: #f8f9fa;
   height: 800px;
@@ -268,6 +307,8 @@ hr {
 .service-card a:hover {
   color: #010f1e8e;
 }
+
+/* Testimionals Section */
 .section-content {
   display: flex;
   text-align: center;
@@ -297,6 +338,8 @@ hr {
   color: gray;
   margin-left: 10px;
 }
+
+/* Pricing  card Section */
 .section-pricing-bg-img {
   background-color: #f8f9fa;
   min-height: 800px;
@@ -367,6 +410,8 @@ hr {
 .pricing-card a:hover {
   background-color: #6c757dd6;
 }
+
+/* Quention Contents Section */
 .quention-contents {
   display: flex;
   flex-wrap: wrap;
@@ -386,6 +431,8 @@ hr {
   margin-bottom: 16px;
   line-height: 1.7;
 }
+
+/*  Section card */
 .section-cards {
   display: flex;
   justify-content: space-between;
@@ -402,6 +449,8 @@ hr {
 .section-card2 .section-one-img img {
   border-radius: 4px;
 }
+
+/* Our Blog Card */
 .blog-cards {
   display: flex;
   justify-content: space-between;
@@ -453,6 +502,8 @@ hr {
 .blog-card-content a:hover {
   color: #010f1e8e;
 }
+
+/* Contact Us */
 .contact-bg-img {
   background-color: #f8f9fa;
   height: 100%;
@@ -462,7 +513,6 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
 }
 .contact-connect {
   display: flex;
@@ -507,10 +557,11 @@ hr {
   text-transform: capitalize;
   margin-bottom: 20px;
 }
+
+/* Form Section */
 .form{
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   gap: 5px; 
 }
 
@@ -557,6 +608,9 @@ label{
     cursor: pointer;
 }
 .submit input:hover{ background: #000; }
+
+
+/* Footer Section */
 .footer-bg-img{
   background-color: #333;
   padding: 128px 0;
@@ -591,11 +645,16 @@ padding-bottom: 48px ;
 .footer-content ul li a:hover{
   color: #1e010198;
 }
-.footer-content .links a i{
+.footer-content .Links{
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.footer-content .Links a i{
   color: #999;
 transition: .5s;
 }
-.footer-content .links a i:hover{
+.footer-content .Links a i:hover{
   color:  #1e010198;
 }
 .footer-content input{
@@ -627,6 +686,7 @@ transition: .5s;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 48px;
 }
 .colorlib p{
   color: #737373;
@@ -635,5 +695,104 @@ transition: .5s;
 .colorlib .fa-heart{
   color: red;
   font-size: 16px;
-  padding-top: 48px;
+}
+
+@media only screen and (max-width:768px) {
+  .container{
+    width:90%;
+    margin: 0 auto;
+  }
+  .header-bg-img{
+    height: 100%;
+  }
+  .navbar{
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+  .logo a{
+    display: flex;
+    justify-content: space-between;
+  }
+  .links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dropdown:hover .dropdown-content{
+    display: none;
+  }
+  .section-one{
+    flex-direction: column;
+    justify-content: start;
+    gap: 40px;
+  }
+  .section-one-img img{
+    width: 100%;
+  }
+  .section-one-content{
+    padding: 0;
+  }
+  .section-header p{
+    max-width: 100%;
+  }
+  .section-two-card-img img {
+    max-width: 100%;
+  }
+  .portfolio-card1{
+    padding: 0;
+  }
+  .portfolio-card1 img{
+    max-width: 100%;
+  }
+  .section-services-bg-img{
+    height: 100%;
+  }
+  .services-cards{
+    flex-direction: column;
+    gap: 80px;
+  }
+  .service-card {
+    max-width: 100%;
+  }
+  .pricing-cards{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .pricing-card{
+    max-width: 100%;
+  }
+  .section-card1{
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+  .blog-cards{
+    flex-direction: column;
+    gap: 60px;
+  }
+  .blog-card{
+    max-width: 100%;
+  }
+  .contact-connection{
+    flex-direction: column;
+    gap: 40px;
+  }
+  .form{
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer-contents{
+    flex-direction: column;
+    gap: 40px;
+  }
+  .footer-content input{
+    width: 100%;
+  }
+  .footer-content .send{
+    left:77%;
+  }
+  .colorlib p{
+    text-align: center;
+    line-height: 1.7;
+  }
 }
